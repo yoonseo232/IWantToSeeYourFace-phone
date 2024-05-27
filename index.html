@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
     <title>핸드폰</title>
-    <style>
-        .logo{
-            width: 200px;
-        }
-    </style>
 </head>
 <body>
-    <img src="images/Logo.png" class="logo">
+    <button onclick="phone()" class="phone"><img src="images/phone.png" alt="" width="150px"></button>
+
+    <script>
+        function phone(){
+            var popupX = (window.screen.width / 2) - (400 / 2);
+            var popupY= (window.screen.height /2) - (600 / 2);
+            window.open('phone_home.html', 'phone', 'status=no, height=600, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+        }
+    </script>
 </body>
 </html>
