@@ -46,5 +46,15 @@
         <a href="message.html"><button><img src="images/phone_messageApp.png" alt="" width="70px" ></button></a>
         <a href="gallery.html"><button><img src="images/phone_galleryApp.png" alt="" width="70px" ></button></a>
     </div>
+    <script>
+        if (doc.requestFullscreen)
+        doc.requestFullscreen();
+        else if (doc.webkitRequestFullscreen) // Chrome, Safari (webkit)
+            doc.webkitRequestFullscreen();
+        else if (doc.mozRequestFullScreen) // Firefox
+            doc.mozRequestFullScreen();
+        else if (doc.msRequestFullscreen) // IE or Edge
+            doc.msRequestFullscreen();
+    </script>
 </body>
 </html>
