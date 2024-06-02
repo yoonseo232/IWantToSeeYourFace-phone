@@ -1,0 +1,19 @@
+
+body{
+    background-image: url("../images/wallpaper.png");
+    /* background-color: rgb(255, 202, 223); */
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em 2em 0em 2em;
+}
+
+button{
+    padding: 0;
+    float: right;
+    background-color:transparent;
+    border: none;
+}
