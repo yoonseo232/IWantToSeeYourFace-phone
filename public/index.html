@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <title>핸드폰</title>
+</head>
+<body>
+    <button onclick="phone()" class="phone"><img src="images/phone.png" alt="" width="150px"></button>
+
+    <script>
+        function phone(){
+            var popupX = (window.screen.width / 2) - (400 / 2);
+            var popupY= (window.screen.height /2) - (760 / 2);
+            window.open('home.html', 'phone', 'status=no, height=760, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server 2</title>
+</head>
+<body>
+  <h1>Hello from Server 2</h1>
+  <button id="fetchData">Fetch Data from Server 1</button>
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById('fetchData').addEventListener('click', () => {
+      fetch('http://localhost:5000/api/external')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    });
+  </script>
+</body>
+</html>
