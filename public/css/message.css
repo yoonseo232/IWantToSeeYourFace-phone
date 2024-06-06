@@ -1,5 +1,9 @@
 body{
-    background-image: url("../images/message.svg");
+    background-color: #C3DFEC;
+}
+
+.btn1{
+    margin-top: 3px;
 }
 
 .btn2, .btn3, .btn4{
