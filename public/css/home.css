@@ -7,13 +7,12 @@ body{
 .app{
     display: flex;
     align-items: center;
+    margin: 2em 1em 0em 1em;
     justify-content: space-between;
-    margin: 2em 2em 0em 2em;
 }
 
 button{
     padding: 0;
     float: right;
-    background-color:transparent;
     border: none;
 }

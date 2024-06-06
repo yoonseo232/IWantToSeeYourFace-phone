@@ -1,0 +1,8 @@
+body{
+    background-image: url("../images/message.svg");
+}
+
+.btn2, .btn3, .btn4{
+    margin-top: -5px;
+}
+
