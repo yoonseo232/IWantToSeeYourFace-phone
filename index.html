@@ -1,38 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="css/all.css"> -->
-    <title>핸드폰</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/home.css">
+  <title>핸드폰</title>
 </head>
 <body>
-    <button onclick="phone()" class="phone"><img src="images/phone.png" alt="" width="150px"></button>
-
-    <script>
-        async function phone(){
-          var popupX = (window.screen.width / 2) - (400 / 2);
-          var popupY= (window.screen.height /2) - (760 / 2);
-          window.open('home.html', 'phone', 'status=no, height=760, width=400, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
-          try {
-                const response = await fetch('/send', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ message: 'Hello from HTML button' })
-                });
-
-                if (response.ok) {
-                    console.log('JSON sent successfully');
-                } else {
-                    console.error('Failed to send JSON');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        }
-    </script>
+  <div class="app">
+      <a href="address.html"><button><img src="images/addressApp.png" alt="" width="70px"></button></a>
+      <a href="call.html"><button><img src="images/callApp.png" alt="" width="70px"></button></a>
+      <a href="message.html"><button><img src="images/messageApp.png" alt="" width="70px" ></button></a>
+      <a href="gallery.html"><button><img src="images/galleryApp.png" alt="" width="70px" ></button></a>
+  </div>
 </body>
 </html>
 

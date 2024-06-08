@@ -8,10 +8,34 @@
     <title>핸드폰 | 메세지</title>
 </head>
 <body>
-    <a href="home.html"><button class="prevBtn"><img src="images/prevBtn.svg" width="20px"alt=""></button></a>
+    <a href="home.html"><button class="prevBtn"><img src="images/prevBtn.svg" width="20px" alt=""></button></a>
     <a href="message1.html"><button class="btn1"><img src="images/messageBtn1.svg" alt=""></button></a>
     <a href="message2.html"><button class="btn2"><img src="images/messageBtn2.svg" alt=""></button></a>
     <a href="message3.html"><button class="btn3"><img src="images/messageBtn3.svg" alt=""></button></a>
-    <a href="message4.html"><button class="btn4"><img src="images/messageBtn4.svg" alt=""></button></a>
+    <button class="btn4"><img src="images/messageBtn4.svg" alt=""></button>
+    <script>
+        const buttons = document.getElementsByClassName('btn1');
+        Array.from(buttons).forEach(button => {
+            button.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('http://localhost:3000/sign', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message: 'phone' })
+                    });
+                    if (response.ok) {
+                        alert('Sign request sent successfully!');
+                    } else {
+                        throw new Error('Sign request failed');
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert('Failed to send sign request');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

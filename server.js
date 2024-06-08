@@ -12,7 +12,6 @@ app.use('/images', express.static('images'))
 app.use('/css', express.static('css'))
 app.use('/js', express.static('js'))
 
-// API 엔드포인트 설정
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
@@ -37,6 +36,9 @@ app.get('/message.html', (req, res) => {
 app.get('/message1.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'message1.html'));
 });
+app.get('/message1-2.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'message1-2.html'));
+});
 app.get('/message2.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'message2.html'));
 });
@@ -44,16 +46,18 @@ app.get('/message3.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'message3.html'));
 });
 
-app.post('/send', async (req, res) => {
-    try {
-        const response = await axios.post('http://localhost:3000/api/receive', req.body);
-        console.log('JSON sent successfully:', response.data);
-        res.sendStatus(200);
-    } catch (error) {
-        console.error('Error sending JSON:', error.message);
-        res.status(500).json({ error: 'Failed to send JSON' });
-    }
+app.get('/api', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+app.post('/api', (req, res) => {
+    res.status(200).json({ message: 'check' });
+    if(req.body.message == 'sign'){
+        
+    }
+    console.log(' 여부 :', req.body);
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
