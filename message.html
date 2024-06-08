@@ -15,21 +15,17 @@
     <button class="btn4"><img src="images/messageBtn4.svg" alt=""></button>
     <script>
         const buttons = document.getElementsByClassName('btn1');
+        const hostname = '호스트이름'
         Array.from(buttons).forEach(button => {
             button.addEventListener('click', async () => {
                 try {
-                    const response = await fetch('http://localhost:3000/sign', {
+                    const response = await fetch(`http://${hostname}:3000/sign`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({ message: 'phone' })
                     });
-                    if (response.ok) {
-                        alert('Sign request sent successfully!');
-                    } else {
-                        throw new Error('Sign request failed');
-                    }
                 } catch (error) {
                     console.error(error);
                     alert('Failed to send sign request');
