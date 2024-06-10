@@ -52,9 +52,6 @@ app.get('/api', (req, res) => {
 
 app.post('/api', (req, res) => {
     res.status(200).json({ message: 'check' });
-    if(req.body.message == 'sign'){
-        
-    }
     console.log(' 여부 :', req.body);
 });
 
