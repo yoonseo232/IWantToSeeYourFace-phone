@@ -21,6 +21,18 @@ app.get('/home.html', (req, res) => {
 app.get('/address.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'address.html'));
 });
+app.get('/address1.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'address1.html'));
+});
+app.get('/address2.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'address2.html'));
+});
+app.get('/address3.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'address3.html'));
+});
+app.get('/address4.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'address4.html'));
+});
 app.get('/call.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'call.html'));
 });
