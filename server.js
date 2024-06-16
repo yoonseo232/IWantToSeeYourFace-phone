@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const axios = require('axios');
 
+let reset = false;
+
 app.use(cors());
 app.use(express.json()); // JSON 파싱 미들웨어
 
@@ -58,20 +60,21 @@ app.get('/message3.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'message3.html'));
 });
 
-app.get('/api', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
 app.post('/api', (req, res) => {
-    if (req.body.message == 'sign') res.status(200).json({ message: 'check' });
-    else res.status(200).json({ message: '' });
+    if (req.body.message === 'sign') {
+        res.status(200).json({ message: 'check' });
+    } else {   
+        res.status(200).json({ message: '' });
+        reset = true;
+    } 
     console.log(' 여부 :', req.body);
 });
 
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.get('/reset-status', (req, res) => {
+    res.json({ reset });
+    if (reset) reset = false;  // 리셋 상태를 한번 확인하면 다시 false로 변경
 });
 
-
-
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
