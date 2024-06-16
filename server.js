@@ -63,7 +63,8 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/api', (req, res) => {
-    res.status(200).json({ message: 'check' });
+    if (req.body.message == 'sign') res.status(200).json({ message: 'check' });
+    else res.status(200).json({ message: '' });
     console.log(' 여부 :', req.body);
 });
 
@@ -71,3 +72,6 @@ app.post('/api', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+
