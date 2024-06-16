@@ -1,5 +1,5 @@
 function checkReset() {
-    fetch('/reset-status')
+    fetch('/reset')
         .then(response => response.json())
         .then(data => {
             if (data.reset) {

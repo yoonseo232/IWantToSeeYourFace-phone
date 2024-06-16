@@ -70,9 +70,9 @@ app.post('/api', (req, res) => {
     console.log(' 여부 :', req.body);
 });
 
-app.get('/reset-status', (req, res) => {
+app.get('/reset', (req, res) => {
     res.json({ reset });
-    if (reset) reset = false;  // 리셋 상태를 한번 확인하면 다시 false로 변경
+    if (reset) reset = false; 
 });
 
 app.listen(PORT, () => {
